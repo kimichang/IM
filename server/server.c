@@ -9,6 +9,8 @@
 
 #define PORT 8008
 #define MAXDATASIZE 2048
+enum status { offline,online,busy,not_disturb,transparent};
+
 struct clients {
 	char* ip;
 	char* port;
