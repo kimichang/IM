@@ -23,7 +23,7 @@ static SSL_CTX *g_sslctx = NULL;
 int connect_to_server(int fd,char* ip,int port)
 {
     struct sockaddr_in svr;
-    memset(&svr,sizeof(svr));
+    memset(&svr,0,sizeof(svr));
     svr.sin_family = AF_INET;
     svr.sin_port = htons(PORT);
     if(inet_pton(AF_INET,ip,&svr.sin_addr) <=0)

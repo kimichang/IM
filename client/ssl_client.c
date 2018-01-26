@@ -12,6 +12,7 @@
 #include <fcntl.h>
 #include <openssl/ssl.h>
 #include <openssl/err.h>
+#include <openssl/x509.h>
 
 
 
@@ -28,7 +29,7 @@ void ShowCerts(SSL * ssl)
         line = X509_NAME_oneline(X509_get_subject_name(cert),0,0);
         printf("Certificate:%s\n",line);
         free(line);
-        line = X509_NAME_online(X509_get_issuer_name(cert),0,0);
+        line = X509_NAME_oneline(X509_get_issuer_name(cert),0,0);
         printf("Issuer:%s\n",line);
         free(line);
         X509_free(cert);
@@ -37,7 +38,7 @@ void ShowCerts(SSL * ssl)
     {
         printf("No certificate information!\n");
     }
-
+}
 int main(int argc,char** argv)
 {
     int i,j,sockfd,len,fd,size;
@@ -156,6 +157,5 @@ int main(int argc,char** argv)
     close(sockfd);
     SSL_CTX_free(ctx);
     return 0;
-}
 }
 
