@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="doc-open">docker.png</file>
+        <file>timg.png</file>
+        <file>timg.jpg</file>
+    </qresource>
+</RCC>
