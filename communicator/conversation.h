@@ -14,10 +14,11 @@ class conversation : public QDialog
 public:
     explicit conversation(QWidget *parent = 0);
     ~conversation();
+    void Setup();
 
 private:
     Ui::conversation *ui;
-    void Setup();
+
 };
 
 #endif // CONVERSATION_H

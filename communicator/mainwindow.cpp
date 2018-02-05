@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowIcon(QIcon(":images/timg.png"));
  //   Conversation* cs = new Conversation();
  //   void (*fn)(void)  = &Conversation::Setup;
-    connect(ui->userlist,&QListWidget::itemClicked,this,&MainWindow::CreateConversation);
+    connect(ui->userlist,&QListWidget::itemDoubleClicked,this,&MainWindow::CreateConversation);
 
     statusBar();
 }
@@ -65,9 +65,13 @@ void MainWindow::open()
 void MainWindow::CreateConversation(QListWidgetItem* item){
 
 //    co->show();
-    co->peer->addItem(new QListWidgetItem(tr("you")));
+    auto co = new conversation();
+ /*   co->peer->addItem(new QListWidgetItem(tr("you")));
     co->peer->addItem(item);
+    co->show();
+    */
 
+    co->show();
 
 }
 

@@ -15,8 +15,11 @@ conversation::~conversation()
 
 void conversation::Setup()
 {
-  //  conversation* co = new conversation();
-  //  co->ui->setupUi();
-  //  co->show();
+//    auto co = new conversation();
+
+//    this->peer->addItem(new QListWidgetItem(tr("you")));
+//    co->peer->addItem(item);
+//    co->show();
+
 }
 
