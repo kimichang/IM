@@ -225,6 +225,7 @@ DIST          = ../communicator/resource.rc \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/spec_post.prf \
+		../communicator/.qmake.stash \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -422,6 +423,7 @@ Makefile: ../communicator/communicator.pro /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/l
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -610,6 +612,7 @@ Makefile: ../communicator/communicator.pro /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/l
 /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -681,9 +684,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resource.cpp
 qrc_resource.cpp: ../communicator/resource.qrc \
 		/opt/Qt5.10.0/5.10.0/gcc_64/bin/rcc \
-		../communicator/docker.png \
-		../communicator/timg.png \
-		../communicator/timg.jpg
+		../communicator/timg.jpg \
+		../communicator/window.ico
 	/opt/Qt5.10.0/5.10.0/gcc_64/bin/rcc -name resource ../communicator/resource.qrc -o qrc_resource.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -1230,24 +1232,62 @@ mainwindow.o: ../communicator/mainwindow.cpp ../communicator/mainwindow.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qdialog.h \
 		ui_mainwindow.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QToolBar \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qtoolbar.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QAction \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qaction.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QStatusBar \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QButtonGroup \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QComboBox \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qcombobox.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QHeaderView \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qheaderview.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextformat.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QListWidget \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QMenuBar \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qmenubar.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qmenu.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QPlainTextEdit \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qtextedit.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextdocument.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextlayout.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qglyphrun.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qrawfont.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qfontdatabase.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QStatusBar \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qstatusbar.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QToolBar \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qtoolbar.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QVBoxLayout \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qlayout.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qgridlayout.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QWidget \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QPushButton \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QMessageBox \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QListWidget \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QListView \
-		ui_conversation.h
+		ui_conversation.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QDialogButtonBox \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QTextEdit
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../communicator/mainwindow.cpp
 
 conversation.o: ../communicator/conversation.cpp ../communicator/conversation.h \
@@ -1355,7 +1395,51 @@ conversation.o: ../communicator/conversation.cpp ../communicator/conversation.h 
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qfiledevice.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_conversation.h
+		ui_conversation.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qactiongroup.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QButtonGroup \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QDialogButtonBox \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QHeaderView \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qheaderview.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qstyleoption.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qvalidator.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qslider.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qabstractslider.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qstyle.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qtabbar.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QListWidget \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qlistwidget.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qlistview.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/QTextEdit \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtWidgets/qtextedit.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextdocument.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextformat.h \
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o conversation.o ../communicator/conversation.cpp
 
 qrc_resource.o: qrc_resource.cpp 

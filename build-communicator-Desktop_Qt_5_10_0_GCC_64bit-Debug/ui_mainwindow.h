@@ -33,11 +33,11 @@ public:
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QComboBox *comboBox;
-    QPlainTextEdit *plainTextEdit;
+    QComboBox *status;
+    QPlainTextEdit *profile;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
-    QLineEdit *lineEdit;
+    QLineEdit *peersearch;
     QListWidget *search;
     QListWidget *userlist;
     QMenuBar *menuBar;
@@ -68,25 +68,25 @@ public:
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        comboBox = new QComboBox(verticalLayoutWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
+        status = new QComboBox(verticalLayoutWidget);
+        status->setObjectName(QStringLiteral("status"));
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
-        comboBox->setSizePolicy(sizePolicy1);
-        comboBox->setMaximumSize(QSize(40, 16777215));
-        comboBox->setEditable(false);
+        sizePolicy1.setHeightForWidth(status->sizePolicy().hasHeightForWidth());
+        status->setSizePolicy(sizePolicy1);
+        status->setMaximumSize(QSize(40, 16777215));
+        status->setEditable(false);
 
-        verticalLayout->addWidget(comboBox);
+        verticalLayout->addWidget(status);
 
-        plainTextEdit = new QPlainTextEdit(verticalLayoutWidget);
-        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
-        plainTextEdit->setMaximumSize(QSize(150, 30));
-        plainTextEdit->setLayoutDirection(Qt::RightToLeft);
-        plainTextEdit->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
+        profile = new QPlainTextEdit(verticalLayoutWidget);
+        profile->setObjectName(QStringLiteral("profile"));
+        profile->setMaximumSize(QSize(150, 30));
+        profile->setLayoutDirection(Qt::RightToLeft);
+        profile->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
 
-        verticalLayout->addWidget(plainTextEdit);
+        verticalLayout->addWidget(profile);
 
         verticalLayoutWidget_2 = new QWidget(centralWidget);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
@@ -96,20 +96,20 @@ public:
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        lineEdit = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setEnabled(true);
+        peersearch = new QLineEdit(verticalLayoutWidget_2);
+        peersearch->setObjectName(QStringLiteral("peersearch"));
+        peersearch->setEnabled(true);
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Minimum);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy2);
-        lineEdit->setMaximumSize(QSize(16777215, 30));
-        lineEdit->setFocusPolicy(Qt::ClickFocus);
-        lineEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        lineEdit->setClearButtonEnabled(true);
+        sizePolicy2.setHeightForWidth(peersearch->sizePolicy().hasHeightForWidth());
+        peersearch->setSizePolicy(sizePolicy2);
+        peersearch->setMaximumSize(QSize(16777215, 30));
+        peersearch->setFocusPolicy(Qt::ClickFocus);
+        peersearch->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        peersearch->setClearButtonEnabled(true);
 
-        verticalLayout_2->addWidget(lineEdit);
+        verticalLayout_2->addWidget(peersearch);
 
         search = new QListWidget(centralWidget);
         search->setObjectName(QStringLiteral("search"));
@@ -120,7 +120,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 388, 23));
+        menuBar->setGeometry(QRect(0, 0, 388, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -137,9 +137,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Communicator", nullptr));
-        comboBox->setCurrentText(QString());
-        plainTextEdit->setPlaceholderText(QApplication::translate("MainWindow", "text your status here!", nullptr));
-        lineEdit->setPlaceholderText(QApplication::translate("MainWindow", "search here", nullptr));
+        status->setCurrentText(QString());
+        profile->setPlaceholderText(QApplication::translate("MainWindow", "text your status here!", nullptr));
+        peersearch->setPlaceholderText(QApplication::translate("MainWindow", "search here", nullptr));
     } // retranslateUi
 
 };

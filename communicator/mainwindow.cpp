@@ -19,27 +19,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->status->setItemIcon(0,QIcon(":/images/timg.jpg"));
+    ui->status->setItemIcon(1,QIcon(":/images/timg.jpg"));
     ui->userlist->addItem(new QListWidgetItem(tr("name 1")));
     ui->userlist->addItem(new QListWidgetItem(tr("name 2")));
     ui->userlist->addItem(new QListWidgetItem(tr("third man")));
-    ui->userlist->addItem(new QListWidgetItem(QIcon("timg.jpg"),tr("lync")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 1")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 2")));
-    ui->userlist->addItem(new QListWidgetItem(tr("third man")));
-    ui->userlist->addItem(new QListWidgetItem(QIcon("images/doc-open.png"),tr("lync")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 1")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 2")));
-    ui->userlist->addItem(new QListWidgetItem(tr("third man")));
-    ui->userlist->addItem(new QListWidgetItem(QIcon("images/doc-open.png"),tr("lync")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 1")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 2")));
-    ui->userlist->addItem(new QListWidgetItem(tr("third man")));
-    ui->userlist->addItem(new QListWidgetItem(QIcon("images/doc-open.png"),tr("lync")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 1")));
-    ui->userlist->addItem(new QListWidgetItem(tr("name 2")));
-    ui->userlist->addItem(new QListWidgetItem(tr("third man")));
-    ui->userlist->addItem(new QListWidgetItem(QIcon("images/doc-open.png"),tr("lync")));
-    setWindowIcon(QIcon(":images/timg.png"));
+    ui->userlist->addItem(new QListWidgetItem(QIcon(":/images/timg.jpg"),tr("lync")));
+    ui->userlist->addItem(new QListWidgetItem(QIcon(":/images/window.ico"),tr("icon")));
+
  //   Conversation* cs = new Conversation();
  //   void (*fn)(void)  = &Conversation::Setup;
     connect(ui->userlist,&QListWidget::itemDoubleClicked,this,&MainWindow::CreateConversation);
@@ -66,12 +53,11 @@ void MainWindow::CreateConversation(QListWidgetItem* item){
 
 //    co->show();
     auto co = new conversation();
- /*   co->peer->addItem(new QListWidgetItem(tr("you")));
-    co->peer->addItem(item);
+    co->ui->peer->addItem(new QListWidgetItem(tr("you")));
+    co->ui->peer->addItem(new QListWidgetItem(QIcon(item->icon()),item->text()));
+    co->Setup();
     co->show();
-    */
 
-    co->show();
 
 }
 

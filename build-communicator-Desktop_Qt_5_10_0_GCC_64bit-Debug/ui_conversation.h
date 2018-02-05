@@ -17,6 +17,7 @@
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -26,7 +27,7 @@ public:
     QDialogButtonBox *buttonBox;
     QListWidget *peer;
     QListWidget *dialog;
-    QListWidget *input;
+    QTextEdit *input;
 
     void setupUi(QDialog *conversation)
     {
@@ -44,12 +45,11 @@ public:
         dialog = new QListWidget(conversation);
         dialog->setObjectName(QStringLiteral("dialog"));
         dialog->setGeometry(QRect(10, 90, 361, 221));
-        input = new QListWidget(conversation);
+        input = new QTextEdit(conversation);
         input->setObjectName(QStringLiteral("input"));
         input->setGeometry(QRect(10, 320, 361, 151));
 
         retranslateUi(conversation);
-        QObject::connect(buttonBox, SIGNAL(accepted()), conversation, SLOT(accept()));
         QObject::connect(buttonBox, SIGNAL(rejected()), conversation, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(conversation);

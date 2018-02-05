@@ -30,7 +30,8 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    conversation.h
+    conversation.h \
+    user.h
 
 FORMS += \
         mainwindow.ui \

@@ -25,3 +25,7 @@ void conversation::Setup()
 
 }
 
+void conversation::TryConnect(){
+    
+    
+}
