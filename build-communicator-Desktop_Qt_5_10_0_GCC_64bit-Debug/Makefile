@@ -246,7 +246,8 @@ DIST          = ../communicator/resource.rc \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/lex.prf \
 		../communicator/communicator.pro ../communicator/mainwindow.h \
-		../communicator/conversation.h ../communicator/main.cpp \
+		../communicator/conversation.h \
+		../communicator/user.h ../communicator/main.cpp \
 		../communicator/mainwindow.cpp \
 		../communicator/conversation.cpp
 QMAKE_TARGET  = communicator
@@ -653,7 +654,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../communicator/resource.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.10.0/5.10.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../communicator/mainwindow.h ../communicator/conversation.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../communicator/mainwindow.h ../communicator/conversation.h ../communicator/user.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../communicator/main.cpp ../communicator/mainwindow.cpp ../communicator/conversation.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../communicator/mainwindow.ui ../communicator/conversation.ui $(DISTDIR)/
 
@@ -1439,7 +1440,8 @@ conversation.o: ../communicator/conversation.cpp ../communicator/conversation.h 
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextcursor.h \
 		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qtextformat.h \
-		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qpen.h
+		/opt/Qt5.10.0/5.10.0/gcc_64/include/QtGui/qpen.h \
+		../communicator/user.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o conversation.o ../communicator/conversation.cpp
 
 qrc_resource.o: qrc_resource.cpp 

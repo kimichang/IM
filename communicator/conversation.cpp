@@ -1,5 +1,8 @@
 #include "conversation.h"
 #include "ui_conversation.h"
+#include "user.h"
+#include <netinet/in.h>
+#include <sys/types.h>
 
 conversation::conversation(QWidget *parent) :
     QDialog(parent),
@@ -25,3 +28,11 @@ void conversation::Setup()
 
 }
 
+bool conversation::TryConnect(User* user){
+
+    int sockfd;
+    sockaddr_in *clientaddr;
+    clientaddr->sin_family = AF_INET;
+    clientaddr->sin_port = htons(user->getport());
+    //clientaddr->sin_addr.s_addr = htons(user->getip());
+}

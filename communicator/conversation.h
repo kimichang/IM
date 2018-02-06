@@ -2,6 +2,7 @@
 #define CONVERSATION_H
 
 #include <QDialog>
+#include "user.h"
 
 namespace Ui {
 class conversation;
@@ -16,7 +17,7 @@ public:
     explicit conversation(QWidget *parent = 0);
     ~conversation();
     void Setup();
-
+    bool TryConnect(User*);
 private:
 
 
