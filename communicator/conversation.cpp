@@ -3,6 +3,8 @@
 #include "user.h"
 #include <netinet/in.h>
 #include <sys/types.h>
+#include <event2/event.h>
+
 
 conversation::conversation(QWidget *parent) :
     QDialog(parent),
