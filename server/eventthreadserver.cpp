@@ -64,6 +64,7 @@ int getsocket()
         cout<<"Error fd"<<endl;
     
     return fd;
+    
 }
 void on_write(int sock,short event,void* arg)
 {
@@ -193,6 +194,7 @@ int main()
     event_del(&listen_ev);
     event_base_free(base);
     cout << " main out" << endl;
+	cout << "server out" <<endl;
 }
 
 
