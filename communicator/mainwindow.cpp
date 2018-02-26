@@ -52,6 +52,8 @@ void MainWindow::open()
 void MainWindow::CreateConversation(QListWidgetItem* item){
 
 //    co->show();
+    //to find user_info by item text
+
     auto co = new conversation();
     co->ui->peer->addItem(new QListWidgetItem(tr("you")));
     co->ui->peer->addItem(new QListWidgetItem(QIcon(item->icon()),item->text()));
